@@ -1,17 +1,22 @@
 <template>
-  <div id="myChart" :style="{width: '1200px', height: '300px'}"></div>
+  <div id="myChart" :style="{width: '800px', height: '300px',margin:'10px auto'}"></div>
 </template>
 
 <script>
 export default {
   name: 'Chart',
+  props: {
+    questionnaire:Object,
+  },
   data () {
     return{
+      a:1,
       xAxisData:[],
       seriesData:[]
     }
   },
   mounted(){
+    console.log('执行了',this.xAxisData);
     this.getData();
     this.drawLine();
   },
@@ -39,7 +44,7 @@ export default {
         });
     },
     getData(){
-      let answer = this.$store.state.answerdata.answer;
+      let answer = this.questionnaire.answer;
       answer.forEach(e => {
         this.xAxisData.push(e['type']);
         this.seriesData.push(e['grade']);

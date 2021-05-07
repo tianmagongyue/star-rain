@@ -1,7 +1,11 @@
 <template>
   <div class="demo">
-    <Form></Form>
-    <Chart></Chart>
+    <Form 
+    :questionnaire="questionnaire"
+    ></Form>
+    <Chart 
+    :questionnaire="questionnaire"
+    ></Chart>
   </div>
 </template>
 
@@ -12,11 +16,21 @@ export default {
   components: { Chart, Form },
   name: 'Demo',
   data () {
-    
+    return {
+      questionnaire:this.$route.params.questionnaire,
+    }
+  },
+  methods:{
+    getjson(){
+      console.log(this.questionnaire,'结束')
+    }
+  },
+  mounted(){
+    this.getjson()
   }
 }
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+@import '../../style/demo';
 </style>

@@ -6,6 +6,7 @@ import router from './router'
 import echarts from 'echarts'
 import ElementUI from 'element-ui';
 import store from './state/vuex.js'
+import '../style/reset.css'
 import 'element-ui/lib/theme-chalk/index.css';
 
 Vue.config.productionTip = false;

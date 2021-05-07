@@ -26,14 +26,19 @@
 
 export default {
   name: 'Form',
+  props: {
+    questionnaire:Object,
+  },
   data () {
     return {
-      tableData: []
+      a:1,
+      tableData: [],
     }
   },
   methods: {
     getTableData() {
-      let answerdata = this.$store.state.answerdata
+      console.log(this.questionnaire,'jieshu')
+      let answerdata = this.questionnaire;
       answerdata.answer.forEach(e => {
         let item = {};
         item['date'] = answerdata['date'];
